@@ -6,7 +6,7 @@
 /*   By: sehhong <sehhong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 08:44:16 by sehhong           #+#    #+#             */
-/*   Updated: 2021/05/18 10:24:31 by sehhong          ###   ########.fr       */
+/*   Updated: 2021/05/18 16:09:05 by sehhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static int		count_chunk(char *str, char c)
 
 static	void	str_input(char *dest, char *src, char c)
 {
-	while (*src != c && *src != '\0')
+	while (*src != '\0' && *src != c)
 	{
 		*dest++ = *src++;
 	}
@@ -73,7 +73,7 @@ static void		str_malloc(char **ret, char *str, char c)
 		else
 		{
 			j = 0;
-			while (str[j] != c && str[j] != '\0')
+			while (str[j] != '\0' && str[j] != c)
 				j++;
 			ret[ck] = (char*)malloc(sizeof(char) * (j + 1));
 			if (!ret)

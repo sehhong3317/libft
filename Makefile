@@ -6,7 +6,7 @@
 #    By: sehhong <sehhong@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/08 17:15:30 by sehhong           #+#    #+#              #
-#    Updated: 2021/05/18 10:36:00 by sehhong          ###   ########.fr        #
+#    Updated: 2021/05/18 16:44:28 by sehhong          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,7 @@ $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
 bonus:
+	sleep 1
 	make WITH_BONUS=1 all
 
 clean:
@@ -56,6 +57,6 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-re: clean all 
+re: fclean all 
 
 .PHONY : all clean fclean re bonus

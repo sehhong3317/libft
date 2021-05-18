@@ -6,7 +6,7 @@
 /*   By: sehhong <sehhong@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 17:49:39 by sehhong           #+#    #+#             */
-/*   Updated: 2021/05/13 18:17:58 by sehhong          ###   ########.fr       */
+/*   Updated: 2021/05/18 16:04:59 by sehhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*ret_lst;
 	t_list	*new_lst;
 
-	if (lst == NULL)
+	if (lst == NULL || f == NULL)
 		return (NULL);
 	if (!(ret_lst = ft_lstnew(f(lst->content))))
 	{
